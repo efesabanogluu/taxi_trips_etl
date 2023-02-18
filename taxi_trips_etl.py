@@ -113,6 +113,7 @@ def normalization_data():
     else:
         print(TARGET_SAMPLE_TABLE + "does not exist")
 
+# step where hexagons and daypart are calculated using udf
 def enrichment_data(**kwargs):
     ts_nodash = kwargs.get('ts_nodash')
     ts_nodash = datetime.datetime.strptime(ts_nodash,
@@ -225,7 +226,7 @@ with DAG(
     )
 
     final_result_task = PythonOperator(
-        task_id='enrichment_data',
+        task_id='final_result',
         retries=1,
         python_callable=final_result,
         execution_timeout=datetime.timedelta(minutes=120),

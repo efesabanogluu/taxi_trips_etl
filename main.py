@@ -187,7 +187,7 @@ if __name__ == "__main__":
     event_date_nodash = '20230216T074500'
     event_date = '2023-02-16T08:14:46.008685'
     keywords = {'ds': '2023-02-16', 'ts_nodash': '20230216T000000'}
-    #storage_to_bigquery(**keywords)
-    #normalization_data()
-    #enrichment_data(**keywords)
+    storage_to_bigquery(**keywords)
+    normalization_data()
+    enrichment_data(**keywords)
     final_result(**keywords)
