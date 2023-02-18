@@ -66,7 +66,7 @@ There is a airflow process which has 4 main steps:
  ### ≈0.002$ BigQuery
 
 ( 2.5 hours  * 1.5 vCPU ) * $0.045 per 1000 mCPU hours :
-  ### ≈5.6$ - Cloud Composer Compute CPUs
+  ### ≈0.17$ - Cloud Composer Compute CPUs
 
 ( 2.5 hours * (1.875*2GiB) ) * $0.005 per GiB / hour: 
   ### ≈0.05$ - Cloud Composer Compute Memory
@@ -74,10 +74,10 @@ There is a airflow process which has 4 main steps:
 2.5 hours  / 740 total hours * 3.25 GiB * $0.17 per GiB / month :
  ### ≈0.002$ - Cloud Composer Database Storage
 
-2.5 hours *  (1+1) GiB ) * $0.0002 per GiB / hour: 
- ### ≈0.001$ - Cloud Composer Compute Storage
+180hours *  (1+1) GiB ) * $0.0002 per GiB / hour: 
+ ### ≈0.07$ - Cloud Composer Compute Storage
 
-2.5 hours * $0.35 per hour:
- ### 0.875$ - Small Cloud Composer Environment Fee
+180 hours * $0.35 per hour:
+ ### 63$ - Small Cloud Composer Environment Fee
 
- ### Cost = 6.539$ 
+ ### Cost = 63.3$
