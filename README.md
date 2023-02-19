@@ -57,6 +57,12 @@ There is a airflow process which has 4 main steps:
 #### In the daily running steps, the queries of that day are logged for easy debug.
 ![img.png](images/img_6.png)
 
+#### Different Architecture
+There is a Storage Trigger finalized trigger service that triggers a cloud function for each file uploaded to the specified bucket in Storage. In this way, the data can be transferred to bigquery and then the data can be processed with a cloud function HTTP triggered chain in an event driven processes.
+I did not choose this architecture. because I started with airflow at first and the system I set up contained temp tables. Writing and deleting the temp table for each incoming file would be a worse case. But if I hadn't set it up with a temp table, it would have been a better case.
+
+![img.png](images/img_9.png)
+
 ### Cost Estimation
 
 (1.26 MB * 1/1000 GB/MB * $0.020 * 30) Cloud Storage
@@ -81,3 +87,10 @@ There is a airflow process which has 4 main steps:
  ### 63$ - Small Cloud Composer Environment Fee
 
  ### Cost = 63.3$
+
+
+### High-Level Architectural Design Proposed Question:
+
+In Airflow or cloud function architecture, computation cost is uploaded to BigQuery and is relatively cheap. To improve performance we need to optimize computations in dataflow. We can use shuffle or discard unnecessary columns directly. In terms of performance, we always see the most up-to-date data. It can be important to see the most popular routes and hexagons instantly in business decisions.
+
+![img.png](images/img_10.png)
