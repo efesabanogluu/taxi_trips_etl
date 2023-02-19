@@ -63,6 +63,10 @@ I did not choose this architecture. because I started with airflow at first and 
 
 ![img.png](images/img_9.png)
 
+#### main.py
+
+ A main.py that uses exactly the same functions as in the dag. It can be used to testing and backfill.
+
 ### Cost Estimation
 
 (1.26 MB * 1/1000 GB/MB * $0.020 * 30) Cloud Storage
