@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: taxi_trips   
+    database: vertical-airway-463810-c9
+    schema: dbt_efesabanogluu
+    tables:
+      - name: taxi_trips    
+        description: "Taxi trips raw data table"
+        columns:
+          - name: pickup_date
+            description: "Pickup timestamp"
+          - name: drive_time
+            description: "Dropoff timestamp"
+          - name: total_amount
+            description: "Total fare amount"
+          - name: pickup_location_id
+            description: "Pickup location ID"
+      - name: tripss    
+        description: "Taxi trips raw data table"
+        columns:
+          - name: pickup_date
+            description: "Pickup timestamp"
+          - name: drive_time
+            description: "Dropoff timestamp"
+          - name: total_amount
+            description: "Total fare amount"
+          - name: pickup_location_id
+            description: "Pickup location ID"
