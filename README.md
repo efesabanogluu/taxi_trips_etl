@@ -1,4 +1,56 @@
-# taxi_trips_etl
+# NYC Taxi Trips ETL (Airflow + GCP)  
+
+An Airflow-powered pipeline that processes taxi trip data, with **Google Cloud (BigQuery/GCS)** and **Slack** integrations.  
+
+## 🛠 Technologies  
+- **Apache Airflow 2.5+**  
+- **Google Cloud**: BigQuery (`google-cloud-bigquery`), GCS (`google-cloud-storage`)  
+- **Python**: Pandas (`pandas~=1.5.2`), Requests (`requests==2.28.2`)  
+- **Slack Alerts**: `apache-airflow-providers-slack==7.1.1`  
+
+## 📌 Features  
+- **Extract**: Pulls data from APIs/cloud storage (GCS).  
+- **Transform**: Uses Pandas for cleansing/aggregation.  
+- **Load**: Exports to **BigQuery** (no PostgreSQL involved).  
+- **Slack Notifications**: Alerts for pipeline failures.  
+
+## 📦 File Structure
+
+```
+taxi_trips_etl/  
+├── main.py
+├── taxi_trips_eti.py
+├── requirements.txt
+├── README.md
+├── images/
+│   └── architecture.png
+└── taxi_trips_etl_packages/
+    └── queries.py
+    └── utils.py 
+```
+
+## ⚙️ Setup  
+
+1. **Clone and setup**:
+   ```bash
+   git clone https://github.com/efesabanogluu/taxi_trips_etl.git
+   cd taxi_trips_etl
+
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+
+3. **Initialize Airflow**:
+   ```bash
+   airflow db init
+   airflow users create --username admin --password admin --role Admin
+
+4. **Run services**:
+   ```bash
+   airflow webserver --port 8080 &
+   airflow scheduler
+
+
 ### Etl process to find most common routes and hexagons of taxi trips.
 
 #### Architecture Overview
